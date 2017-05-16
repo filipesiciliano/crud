@@ -1,0 +1,27 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Sample crud application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "babel src/index.js -d dist",
+    "serve": "npm run build && node dist/index.js"
+  },
+  "author": "Andrei Sena <asena.dev@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "~1.0.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "mongoose": "^4.9.9",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^1.11.0"
+  }
+}
