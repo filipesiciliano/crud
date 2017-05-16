@@ -12,7 +12,7 @@ import mongoose from 'mongoose'
 import apiVersionOne from './v1'
 
 // Load the application configuration
-import config from './config.json'
+import config from '../config.json'
 
 const port = process.env.PORT || config.port
 const app = express()
@@ -40,7 +40,7 @@ mongoose.connection.once('open', function() {
 
     // Static Routes
     app.get('/', function(req, res) {
-        res.send('A API está sendo executada na porta ' + port)
+        res.send('A API está sendo executada')
     })
 
     // API Routes
@@ -48,5 +48,5 @@ mongoose.connection.once('open', function() {
 
     // Start the server
     app.listen(port)
-    console.log('API sendo executada na porta ' + port)
+    console.log('A API está sendo executada')
 })

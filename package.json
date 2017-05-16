@@ -4,13 +4,15 @@
   "description": "Sample crud application",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node",
-    "build": "babel src/index.js -d dist",
-    "serve": "npm run build && node dist/index.js"
+    "dev": "nodemon ./src/index.js --exec babel-node",
+    "build": "babel ./src -d ./dist",
+    "start": "npm run build && node ./dist/index.js"
   },
   "author": "Andrei Sena <asena.dev@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
     "bcrypt": "^1.0.2",
     "body-parser": "~1.0.1",
     "cors": "^2.8.3",
@@ -20,8 +22,6 @@
     "morgan": "^1.8.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-latest": "^6.24.1",
     "nodemon": "^1.11.0"
   }
 }

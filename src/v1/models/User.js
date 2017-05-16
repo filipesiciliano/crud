@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
-import config from '../../config.json'
+import config from '../../../config.json'
 
 const Schema = mongoose.Schema
 
