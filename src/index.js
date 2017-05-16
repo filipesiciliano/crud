@@ -2,11 +2,12 @@
 
 // Dependencies
 import express from 'express'
-import cors from 'cors'
 import bodyParser from 'body-parser'
+import cors from 'cors'
+import helmet from 'helmet'
 import jwt from 'jsonwebtoken'
-import morgan from 'morgan'
 import mongoose from 'mongoose'
+import morgan from 'morgan'
 
 // Load the API versions
 import apiVersionOne from './v1'
@@ -28,6 +29,9 @@ mongoose.connection.once('open', function() {
 
     // Start logging
     app.use(morgan('dev'))
+
+    // Helmet
+     app.use(helmet())
 
     // Handle CORS
     app.use(cors({

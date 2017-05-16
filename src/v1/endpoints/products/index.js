@@ -3,12 +3,14 @@
 import express from 'express'
 
 import authenticate from '../../middlewares/authenticate'
+import throttle from '../../middlewares/throttle'
 import Product from '../../models/Product'
 
 export default function () {
     const router = express.Router()
 
     router.use(authenticate)
+    router.use(throttle)
 
     router.get('/', function (req, res, next) {
         Product.find(null, function (err, products) {
